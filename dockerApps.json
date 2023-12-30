@@ -3709,12 +3709,12 @@
             "name": "PGID"
           },
           {
-            "default": "a1ex",
+            "default": "admin",
             "label": "USERNAME",
             "name": "USERNAME"
           },
           {
-            "default": "pass",
+            "default": "changeme",
             "label": "PASSWORD",
             "name": "PASSWORD"
           }
@@ -3729,7 +3729,7 @@
         "type": 1,
         "volumes": [
           {
-            "bind": "/your/game/directory:/games",
+            "bind": "./Documents/Ownfoil/Games:/games",
             "container": "/games"
           }
         ]
