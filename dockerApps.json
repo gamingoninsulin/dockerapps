@@ -3695,8 +3695,8 @@
         ]
       },
       {
-        "categories": ["HomeAutomation"],
-        "description": "Ownfoil is a simple webserver aimed at running your own Tinfoil/Awoo shop from your local library, with full shop customisation and authentication. It is designed to periodically scan your library (default every 5 minutes), generate Tinfoil index file and serve it all over HTTP/S. This makes it easy to manage your library and have your personal collection available at any time.",
+        "categories": ["HomeAutomation", "Management", "Downloaders"],
+        "description": "Ownfoil is a simple webserver aimed at running your own Tinfoil/Awoo shop from your local library, with full shop customisation and authentication. It is designed to periodically scan your library (default every 5 minutes), generate Tinfoil index file and serve it all over HTTP/S. This makes it easy to manage your library and have your personal collection available at any time. made by A1ex4",
         "env": [
           {
             "default": "1000",
@@ -3720,7 +3720,7 @@
           }
         ],
         "image": "a1ex4/ownfoil",
-        "logo": "https://opengraph.githubassets.com/25ca690a78affd5de5517678abd9f97186a4b720d3b06e1c2f055578bce42ca1/a1ex4/ownfoil",
+        "logo": "https://p7.hiclipart.com/preview/121/824/977/aluminium-foil-tin-foil-hat-others.jpg",
         "name": "Ownfile",
         "platform": "linux",
         "ports": ["8000:80"],
@@ -3737,3 +3737,8 @@
     ]
   }
   
+  
+  https://raw.githubusercontent.com/Qballjos/portainer_templates/master/Template/template.json
+  
+  
+
