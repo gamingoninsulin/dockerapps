@@ -2748,7 +2748,7 @@
             "name": "WINGS_SERVER"
         }
     ],
-    "image": "ccarney16/pterodactyl",
+    "image": "carney16/pterodactyl",
     "services": [
         {
             "name": "pterodactyl-panel",
