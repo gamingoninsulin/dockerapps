@@ -2693,7 +2693,7 @@
           }
         ]
       },
-{
+      {
     "categories": ["Management"],
     "description": "Pterodactyl is a powerful management tool for game servers, including a web interface (Panel) and a daemon (Wings).",
     "env": [
@@ -2743,16 +2743,15 @@
             "name": "WINGS_TOKEN"
         },
         {
-            "default": "192.168.2.51",
+            "default": "https://your_panel_url",
             "label": "WINGS_SERVER",
             "name": "WINGS_SERVER"
         }
     ],
-    "image": "carney16/pterodactyl",
     "services": [
         {
             "name": "pterodactyl-panel",
-            "image": "ccarney16/pterodactyl-panel:latest",
+            "image": "azery12356/pterodactyl:nodejs20",
             "ports": ["80:80/tcp", "443:443/tcp"],
             "volumes": [
                 {
@@ -2797,7 +2796,7 @@
         },
         {
             "name": "pterodactyl-wings",
-            "image": "gethec/pterodactyl-wings:latest",
+            "image": "azery12356/pterodactyl:nodejs20",
             "ports": ["8080:8080/tcp"],
             "volumes": [
                 {
