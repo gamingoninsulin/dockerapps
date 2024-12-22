@@ -1,4 +1,4 @@
-{
+we{
     "version": "2",
     "templates": [
       {
@@ -2693,6 +2693,134 @@
           }
         ]
       },
+{
+    "categories": ["Management"],
+    "description": "Pterodactyl is a powerful management tool for game servers, including a web interface (Panel) and a daemon (Wings).",
+    "env": [
+        {
+            "default": "base64:$(openssl rand -base64 32)",
+            "label": "APP_KEY",
+            "name": "APP_KEY"
+        },
+        {
+            "default": "mysql",
+            "label": "DB_HOST",
+            "name": "DB_HOST"
+        },
+        {
+            "default": "3306",
+            "label": "DB_PORT",
+            "name": "DB_PORT"
+        },
+        {
+            "default": "pterodactyl",
+            "label": "DB_DATABASE",
+            "name": "DB_DATABASE"
+        },
+        {
+            "default": "pterodactyl",
+            "label": "DB_USERNAME",
+            "name": "DB_USERNAME"
+        },
+        {
+            "default": "$(openssl rand -base64 32)",
+            "label": "DB_PASSWORD",
+            "name": "DB_PASSWORD"
+        },
+        {
+            "default": "admin",
+            "label": "ADMIN_USER",
+            "name": "ADMIN_USER"
+        },
+        {
+            "default": "Changeme",
+            "label": "ADMIN_PASSWORD",
+            "name": "ADMIN_PASSWORD"
+        },
+        {
+            "default": "$(openssl rand -base64 32)",
+            "label": "WINGS_TOKEN",
+            "name": "WINGS_TOKEN"
+        },
+        {
+            "default": "192.168.2.51",
+            "label": "WINGS_SERVER",
+            "name": "WINGS_SERVER"
+        }
+    ],
+    "image": "quay.io/pterodactyl",
+    "services": [
+        {
+            "name": "pterodactyl-panel",
+            "image": "quay.io/pterodactyl/panel:latest",
+            "ports": ["80:80/tcp", "443:443/tcp"],
+            "volumes": [
+                {
+                    "bind": "./data",
+                    "container": "/var/www/pterodactyl"
+                }
+            ],
+            "restart_policy": "unless-stopped"
+        },
+        {
+            "name": "pterodactyl-mysql",
+            "image": "mysql:5.7",
+            "environment": [
+                {
+                    "default": "$(openssl rand -base64 32)",
+                    "label": "MYSQL_ROOT_PASSWORD",
+                    "name": "MYSQL_ROOT_PASSWORD"
+                },
+                {
+                    "default": "pterodactyl",
+                    "label": "MYSQL_DATABASE",
+                    "name": "MYSQL_DATABASE"
+                },
+                {
+                    "default": "pterodactyl",
+                    "label": "MYSQL_USER",
+                    "name": "MYSQL_USER"
+                },
+                {
+                    "default": "$(openssl rand -base64 32)",
+                    "label": "MYSQL_PASSWORD",
+                    "name": "MYSQL_PASSWORD"
+                }
+            ],
+            "volumes": [
+                {
+                    "bind": "./mysql",
+                    "container": "/var/lib/mysql"
+                }
+            ],
+            "restart_policy": "unless-stopped"
+        },
+        {
+            "name": "pterodactyl-wings",
+            "image": "quay.io/pterodactyl/wings:latest",
+            "ports": ["8080:8080/tcp"],
+            "volumes": [
+                {
+                    "bind": "/var/run/docker.sock",
+                    "container": "/var/run/docker.sock"
+                },
+                {
+                    "bind": "./config",
+                    "container": "/etc/pterodactyl"
+                },
+                {
+                    "bind": "./data",
+                    "container": "/var/lib/pterodactyl"
+                }
+            ],
+            "restart_policy": "unless-stopped"
+        }
+    ],
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3znt-8W6mB1-E-tBT9lZgTSg5w4YVrvz2cQ&usqp=CAU",
+    "platform": "linux",
+    "title": "Pterodactyl",
+    "type": 1
+},
       {
         "categories": ["Downloaders"],
         "description": "The qBittorrent project aims to provide an open-source software alternative to µTorrent. qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.",
