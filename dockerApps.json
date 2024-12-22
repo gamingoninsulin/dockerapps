@@ -2748,11 +2748,11 @@
             "name": "WINGS_SERVER"
         }
     ],
-    "image": "quay.io/pterodactyl",
+    "image": "ccarney16/pterodactyl",
     "services": [
         {
             "name": "pterodactyl-panel",
-            "image": "quay.io/pterodactyl/panel:latest",
+            "image": "ccarney16/pterodactyl-panel:latest",
             "ports": ["80:80/tcp", "443:443/tcp"],
             "volumes": [
                 {
@@ -2797,7 +2797,7 @@
         },
         {
             "name": "pterodactyl-wings",
-            "image": "quay.io/pterodactyl/wings:latest",
+            "image": "gethec/pterodactyl-wings:latest",
             "ports": ["8080:8080/tcp"],
             "volumes": [
                 {
